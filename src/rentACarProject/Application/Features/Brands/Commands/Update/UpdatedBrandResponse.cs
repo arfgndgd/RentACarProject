@@ -1,0 +1,8 @@
+using NArchitecture.Core.Application.Responses;
+
+namespace Application.Features.Brands.Commands.Update;
+
+public class UpdatedBrandResponse : IResponse
+{
+    public Guid Id { get; set; }
+}
