@@ -12,6 +12,7 @@ public class ModelConfiguration : IEntityTypeConfiguration<Model>
 
         builder.Property(m => m.Id).HasColumnName("Id").IsRequired();
         builder.Property(m => m.BrandId).HasColumnName("BrandId").IsRequired();
+        builder.Property(m => m.FuelId).HasColumnName("FuelId").IsRequired();
         builder.Property(m => m.Name).HasColumnName("Name").IsRequired();
         builder.Property(m => m.DailyPrice).HasColumnName("DailyPrice").IsRequired();
         builder.Property(m => m.ImageUrl).HasColumnName("ImageUrl").IsRequired();
@@ -20,6 +21,8 @@ public class ModelConfiguration : IEntityTypeConfiguration<Model>
         builder.Property(m => m.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasOne(b => b.Brand);
+        builder.HasOne(b => b.Fuel);
+
         builder.HasQueryFilter(m => !m.DeletedDate.HasValue);
     }
 }

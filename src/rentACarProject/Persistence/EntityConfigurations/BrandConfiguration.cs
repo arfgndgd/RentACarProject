@@ -11,6 +11,7 @@ public class BrandConfiguration : IEntityTypeConfiguration<Brand>
         builder.ToTable("Brands").HasKey(b => b.Id);
 
         builder.Property(b => b.Id).HasColumnName("Id").IsRequired();
+        builder.Property(b => b.Name).HasColumnName("Name");
         builder.Property(b => b.CreatedDate).HasColumnName("CreatedDate").IsRequired();
         builder.Property(b => b.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(b => b.DeletedDate).HasColumnName("DeletedDate");
